@@ -17,27 +17,25 @@ contract bLESSINGrOLL {
 /// Constants
 
 // Chance to win jackpot - currently 0.1%
-uint256 constant JACKPOT_MODULO = 1000;
+uint256 constant REVOLUTION_MODULO = 1000;
 
 // Each bet is deducted 2% amount - 1% is house edge, 1% goes to jackpot fund.
 uint256 constant HOUSE_EDGE_PERCENT = 2;
-uint256 constant JACKPOT_FEE_PERCENT = 50;
+uint256 constant REVOLUTION_FEE_PERCENT = 50;
 
 // Minimum supported bet is 0.02 ETH, made possible by optimizing gas costs
 // compared to our competitors.
-uint256 constant MIN_BET = 0.02 ether;
+uint256 constant MIN_BET = 10 trx;
 
 // Only bets higher that 0.1 ETH have a chance to win jackpot.
-uint256 constant MIN_JACKPOT_BET = 0.1 ether;
+uint256 constant MIN_JACKPOT_BET = 100 trx;
 
 // Random number generation is provided by the hashes of future blocks.
 // Two blocks is a good compromise between responsive gameplay and safety from miner attacks.
-uint256 constant BLOCK_DELAY = 2;
+uint256 constant BLOCK_DELAY = 1;
 
 // Bets made more than 100 blocks ago are considered failed - this has to do
-// with EVM limitations on block hashes that are queryable. Settlement failure
-// is most probably due to croupier bot failure, if you ever end in this situation
-// ask dice2.win support for a refund!
+// with TVM limitations on block hashes that are queryable. 
 uint256 constant BET_EXPIRATION_BLOCKS = 100;
 
 /// Contract storage.
@@ -231,7 +229,7 @@ function settleBet(address gambler) public {
     if (bet.amount >= MIN_JACKPOT_BET) {
         // The second modulo, statistically independent from the "main" dice roll.
         // Effectively you are playing two games at once!
-        uint256 jackpotRng = (uint256(entropy) / rollModulo) % JACKPOT_MODULO;
+        uint256 jackpotRng = (uint256(entropy) / rollModulo) % REVOLUTION_MODULO;
 
         // Bingo!
         if (jackpotRng == 0) {
@@ -247,7 +245,7 @@ function settleBet(address gambler) public {
     uint256 totalWin = diceWin + jackpotWin;
 
     if (totalWin == 0) {
-        totalWin = 1 wei;
+        totalWin = 1 sun;
     }
 
     if (jackpotWin > 0) {
@@ -358,7 +356,7 @@ function getDiceWinAmount(uint256 amount, uint256 rollModulo, uint256 rollUnder)
 
 // Get the portion of bet amount that is to be accumulated in the jackpot.
 function getJackpotFee(uint256 amount) pure private returns (uint256) {
-    return amount * HOUSE_EDGE_PERCENT / 100 * JACKPOT_FEE_PERCENT / 100;
+    return amount * HOUSE_EDGE_PERCENT / 100 * REVOLUTION_FEE_PERCENT / 100;
 }
 
 // Helper routine to process the payment.
