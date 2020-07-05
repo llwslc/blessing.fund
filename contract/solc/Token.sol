@@ -73,6 +73,8 @@ contract ERC20 is BaseRoles {
         _decimals = decimals;
     }
 
+    function() external payable {}
+
     /**
      * @dev Returns the name of the token.
      */
