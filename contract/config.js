@@ -2,7 +2,7 @@ const env = process.env.NODE_ENV;
 
 const Config = {
   version: '0.5.9',
-  contract: [],
+  contract: ['Broker'],
   chain: {
     privateKey: process.env.PRIVATE_KEY,
     /**
