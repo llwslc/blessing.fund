@@ -33,3 +33,24 @@ const deploy = async (name, bytecode, mainchain = false) => {
   }
 };
 
+const trigger = async (address, functionSelector, parameters = [], options = {}, mainchain = false) => {
+  try {
+    const chain = mainchain ? sunweb.mainchain : sunweb.sidechain;
+    const transaction = await chain.transactionBuilder.triggerSmartContract(
+      address,
+      functionSelector,
+      options,
+      parameters
+    );
+    if (!transaction.result || !transaction.result.result) {
+      throw new Error('Unknown trigger error: ' + JSON.stringify(transaction.transaction));
+    }
+    const signedTransaction = await chain.trx.sign(transaction.transaction, privateKey);
+    const result = await chain.trx.sendRawTransaction(signedTransaction);
+    return result;
+  } catch (error) {
+    console.log(`trigger error ${address} - ${functionSelector}`, error.message ? error.message : error);
+    return {};
+  }
+};
+
