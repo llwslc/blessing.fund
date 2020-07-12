@@ -54,3 +54,19 @@ const trigger = async (address, functionSelector, parameters = [], options = {},
   }
 };
 
+const view = async (address, functionSelector, parameters = [], mainchain = false) => {
+  try {
+    const chain = mainchain ? sunweb.mainchain : sunweb.sidechain;
+    const result = await chain.transactionBuilder.triggerSmartContract(
+      address,
+      functionSelector,
+      { _isConstant: true },
+      parameters
+    );
+    return result && result.result ? result.constant_result : [];
+  } catch (error) {
+    console.log(`view error ${address} - ${functionSelector}`, error.message ? error.message : error);
+    return [];
+  }
+};
+
