@@ -70,3 +70,12 @@ const view = async (address, functionSelector, parameters = [], mainchain = fals
   }
 };
 
+const readJson = path => {
+  try {
+    const str = fs.readFileSync(path);
+    return JSON.parse(str);
+  } catch (error) {
+    console.log('readJson: ', error.message ? error.message : error);
+    return {};
+  }
+};
