@@ -79,3 +79,13 @@ const readJson = path => {
     return {};
   }
 };
+
+const writeJson = (path, obj) => {
+  try {
+    const str = JSON.stringify(obj);
+    fs.writeFileSync(path, str);
+  } catch (error) {
+    console.log('writeJson: ', error.message ? error.message : error);
+  }
+};
+
