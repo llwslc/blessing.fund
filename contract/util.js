@@ -89,3 +89,7 @@ const writeJson = (path, obj) => {
   }
 };
 
+const hexStringToAddress = hexStr => {
+  return TronWeb.address.fromHex(`41${hexStr}`);
+};
+
