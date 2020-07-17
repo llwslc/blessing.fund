@@ -93,3 +93,7 @@ const hexStringToAddress = hexStr => {
   return TronWeb.address.fromHex(`41${hexStr}`);
 };
 
+const hexStringToNumber = hexStr => {
+  return new BigNumber(hexStr, 16).toNumber();
+};
+
