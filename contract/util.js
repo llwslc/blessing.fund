@@ -97,3 +97,4 @@ const hexStringToNumber = hexStr => {
   return new BigNumber(hexStr, 16).toNumber();
 };
 
+module.exports = { deployedPath, deploy, trigger, view, readJson, writeJson, hexStringToAddress, hexStringToNumber };
