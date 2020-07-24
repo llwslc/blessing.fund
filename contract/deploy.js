@@ -5,3 +5,4 @@ const contract = config.contract;
 
 const deployedInfo = readJson(deployedPath);
 console.log('deployedInfo: ', deployedInfo);
+const deployedMoreInfoKey = '_more';
