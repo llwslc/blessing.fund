@@ -8,5 +8,7 @@ const downloadFile = (uri, dest) => {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(dest);
 
+    https.get(uri, res => {
+    });
   });
 };
