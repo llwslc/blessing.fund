@@ -9,6 +9,7 @@ const downloadFile = (uri, dest) => {
     const file = fs.createWriteStream(dest);
 
     https.get(uri, res => {
+      console.log('start download file');
     });
   });
 };
