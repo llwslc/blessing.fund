@@ -10,6 +10,7 @@ const downloadFile = (uri, dest) => {
 
     https.get(uri, res => {
       console.log('start download file');
+
     });
   });
 };
