@@ -12,6 +12,7 @@ const downloadFile = (uri, dest) => {
       console.log('start download file');
 
       if (res.statusCode !== 200) {
+        reject(response.statusCode);
       }
     });
   });
