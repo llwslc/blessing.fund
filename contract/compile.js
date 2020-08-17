@@ -13,6 +13,7 @@ const downloadFile = (uri, dest) => {
 
       if (res.statusCode !== 200) {
         reject(response.statusCode);
+        return;
       }
     });
   });
