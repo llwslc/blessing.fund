@@ -15,6 +15,7 @@ const downloadFile = (uri, dest) => {
         reject(response.statusCode);
         return;
       }
+
     });
   });
 };
