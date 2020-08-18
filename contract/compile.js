@@ -16,6 +16,8 @@ const downloadFile = (uri, dest) => {
         return;
       }
 
+      res.on('data', d => {
+      });
     });
   });
 };
