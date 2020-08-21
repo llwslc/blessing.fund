@@ -17,6 +17,7 @@ const downloadFile = (uri, dest) => {
       }
 
       res.on('data', d => {
+        process.stdout.write('.');
       });
     });
   });
