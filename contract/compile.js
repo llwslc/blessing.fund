@@ -21,6 +21,7 @@ const downloadFile = (uri, dest) => {
       });
 
       res.on('end', () => {
+        console.log('\nfinish download file');
       });
     });
   });
