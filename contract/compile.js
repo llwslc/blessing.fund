@@ -20,6 +20,8 @@ const downloadFile = (uri, dest) => {
         process.stdout.write('.');
       });
 
+      res.on('end', () => {
+      });
     });
   });
 };
