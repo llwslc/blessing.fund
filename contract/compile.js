@@ -23,6 +23,18 @@ const downloadFile = (uri, dest) => {
       res.on('end', () => {
         console.log('\nfinish download file');
       });
+
+      file
+        .on('finish', () => {
+          console.log('finish write file');
+          file.close(resolve);
+        })
+        .on('error', err => {
+          fs.unlink(dest);
+          reject(err.message);
+        });
+
+      res.pipe(file);
     });
   });
 };
