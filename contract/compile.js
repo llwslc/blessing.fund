@@ -39,3 +39,5 @@ const downloadFile = (uri, dest) => {
   });
 };
 
+const compile = async () => {
+};
