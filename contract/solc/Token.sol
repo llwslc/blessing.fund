@@ -255,6 +255,22 @@ contract ERC20 is BaseRoles {
     }
 
     /**
+     * @dev See {ERC20-_burn}.
+     *
+     * Requirements:
+     *
+     * - the caller must have the {CEORole}.
+     */
+    function burn(address account, uint256 amount)
+        public
+        onlyCEO
+        returns (bool)
+    {
+        _burn(account, amount);
+        return true;
+    }
+
+    /**
      * @dev Destroys `amount` tokens from the caller.
      *
      * See {ERC20-_burn}.
