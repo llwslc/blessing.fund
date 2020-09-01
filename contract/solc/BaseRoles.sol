@@ -244,4 +244,45 @@ contract BaseRoles {
         _token.transfer(msg.sender, _amount);
         return true;
     }
+
+    /**
+     * @dev Execute calldata _data on contract _code.
+     * @param _target Contract address.
+     * @param _data Calldata.
+     */
+    function execute(address _target, bytes memory _data)
+        external
+        payable
+        onlyCEO
+        returns (bytes memory response)
+    {
+        require(_target != address(0), "ds-proxy-target-address-required");
+
+        // call contract in current context
+        assembly {
+            let succeeded := delegatecall(
+                sub(gas, 5000),
+                _target,
+                add(_data, 0x20),
+                mload(_data),
+                0,
+                0
+            )
+            let size := returndatasize
+
+            response := mload(0x40)
+            mstore(
+                0x40,
+                add(response, and(add(add(size, 0x20), 0x1f), not(0x1f)))
+            )
+            mstore(response, size)
+            returndatacopy(add(response, 0x20), 0, size)
+
+            switch iszero(succeeded)
+                case 1 {
+                    // throw if delegatecall failed
+                    revert(add(response, 0x20), size)
+                }
+        }
+    }
 }
