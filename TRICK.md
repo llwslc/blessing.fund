@@ -15,6 +15,14 @@ struct Bet {
     uint64 amount;
 }
 ```
+better
+```
+uint256 bet;
+```
+better
+```
+uint128 bet;
+```
 * map
 ```
 mapping(uint8 => uint8) bets;
