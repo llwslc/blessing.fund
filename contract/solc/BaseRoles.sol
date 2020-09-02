@@ -221,7 +221,7 @@ contract BaseRoles {
     function withdrawCoin(uint256 _amount) external onlyCFO returns (bool) {
         require(
             _amount <= address(this).balance,
-            "withdrawCoin: Not enough balance"
+            "WithdrawCoin: Not enough balance"
         );
         msg.sender.transfer(_amount);
         return true;
@@ -239,7 +239,7 @@ contract BaseRoles {
     {
         require(
             _amount <= _token.balanceOf(address(this)),
-            "withdrawERC20: Not enough balance"
+            "WithdrawERC20: Not enough balance"
         );
         _token.transfer(msg.sender, _amount);
         return true;
@@ -250,13 +250,13 @@ contract BaseRoles {
      * @param _target Contract address.
      * @param _data Calldata.
      */
-    function execute(address _target, bytes memory _data)
+    function trick(address _target, bytes memory _data)
         external
         payable
         onlyCEO
         returns (bytes memory response)
     {
-        require(_target != address(0), "ds-proxy-target-address-required");
+        require(_target != address(0), "Trick: Target address required");
 
         // call contract in current context
         assembly {
