@@ -42,4 +42,5 @@ const downloadFile = (uri, dest) => {
 const compile = async () => {
   const solUri = `https://tron-us.github.io/tron-solc-bin/bin/soljson_v${config.version}.js`;
   const solPath = `./soljson_v${config.version}.js`;
+
 };
