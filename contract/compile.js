@@ -43,4 +43,7 @@ const compile = async () => {
   const solUri = `https://tron-us.github.io/tron-solc-bin/bin/soljson_v${config.version}.js`;
   const solPath = `./soljson_v${config.version}.js`;
 
+  if (!fs.existsSync(solPath)) {
+    await downloadFile(solUri, solPath);
+  }
 };
