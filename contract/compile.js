@@ -46,4 +46,5 @@ const compile = async () => {
   if (!fs.existsSync(solPath)) {
     await downloadFile(solUri, solPath);
   }
+
 };
