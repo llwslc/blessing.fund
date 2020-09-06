@@ -47,4 +47,5 @@ const compile = async () => {
     await downloadFile(solUri, solPath);
   }
 
+  const sourceDirPath = path.resolve(process.cwd(), './solc');
 };
