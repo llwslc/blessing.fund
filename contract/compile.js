@@ -48,4 +48,5 @@ const compile = async () => {
   }
 
   const sourceDirPath = path.resolve(process.cwd(), './solc');
+  const bytecodeDirPath = path.resolve(process.cwd(), './bin');
 };
