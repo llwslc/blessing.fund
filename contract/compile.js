@@ -51,4 +51,5 @@ const compile = async () => {
   const bytecodeDirPath = path.resolve(process.cwd(), './bin');
 
   const files = fs.readdirSync(sourceDirPath);
+
 };
