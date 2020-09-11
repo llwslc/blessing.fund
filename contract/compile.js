@@ -52,4 +52,6 @@ const compile = async () => {
 
   const files = fs.readdirSync(sourceDirPath);
 
+  if (files.length) {
+  }
 };
