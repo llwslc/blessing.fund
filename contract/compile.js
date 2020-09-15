@@ -57,4 +57,5 @@ const compile = async () => {
       fs.mkdirSync(bytecodeDirPath);
     }
   }
+
 };
