@@ -55,5 +55,6 @@ const compile = async () => {
   if (files.length) {
     if (!fs.existsSync(bytecodeDirPath)) {
       fs.mkdirSync(bytecodeDirPath);
+    }
   }
 };
