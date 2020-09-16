@@ -58,4 +58,6 @@ const compile = async () => {
     }
   }
 
+  let input = {
+  };
 };
