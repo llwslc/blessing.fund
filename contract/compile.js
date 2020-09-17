@@ -59,5 +59,6 @@ const compile = async () => {
   }
 
   let input = {
+    language: 'Solidity',
   };
 };
