@@ -62,5 +62,6 @@ const compile = async () => {
     language: 'Solidity',
     sources: {},
     settings: {
+      optimizer: {
   };
 };
