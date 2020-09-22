@@ -63,5 +63,6 @@ const compile = async () => {
     sources: {},
     settings: {
       optimizer: {
+        enabled: true
   };
 };
