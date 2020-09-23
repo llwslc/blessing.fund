@@ -65,5 +65,6 @@ const compile = async () => {
       optimizer: {
         enabled: true
       },
+      outputSelection: {
   };
 };
