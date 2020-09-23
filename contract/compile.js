@@ -64,5 +64,6 @@ const compile = async () => {
     settings: {
       optimizer: {
         enabled: true
+      },
   };
 };
