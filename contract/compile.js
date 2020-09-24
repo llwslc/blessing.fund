@@ -66,5 +66,6 @@ const compile = async () => {
         enabled: true
       },
       outputSelection: {
+        '*': {
   };
 };
