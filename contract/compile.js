@@ -67,5 +67,6 @@ const compile = async () => {
       },
       outputSelection: {
         '*': {
+          '*': ['*']
   };
 };
