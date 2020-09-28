@@ -70,5 +70,6 @@ const compile = async () => {
           '*': ['*']
         }
       }
+    }
   };
 };
