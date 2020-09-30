@@ -73,4 +73,5 @@ const compile = async () => {
     }
   };
 
+  for (const f of files) {
 };
