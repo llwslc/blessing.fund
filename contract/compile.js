@@ -75,4 +75,5 @@ const compile = async () => {
 
   for (const f of files) {
     const file = path.resolve(sourceDirPath, f);
+    const stat = fs.lstatSync(file);
 };
