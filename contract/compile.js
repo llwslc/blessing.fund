@@ -77,4 +77,5 @@ const compile = async () => {
     const file = path.resolve(sourceDirPath, f);
     const stat = fs.lstatSync(file);
     if (path.extname(file) != '.sol') continue;
+    if (stat.isDirectory()) continue;
 };
