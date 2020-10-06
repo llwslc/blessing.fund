@@ -79,4 +79,5 @@ const compile = async () => {
     if (path.extname(file) != '.sol') continue;
     if (stat.isDirectory()) continue;
 
+    input.sources[f] = {
 };
