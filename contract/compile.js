@@ -80,4 +80,5 @@ const compile = async () => {
     if (stat.isDirectory()) continue;
 
     input.sources[f] = {
+      content: fs.readFileSync(file, 'utf8')
 };
