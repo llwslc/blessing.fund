@@ -82,4 +82,5 @@ const compile = async () => {
     input.sources[f] = {
       content: fs.readFileSync(file, 'utf8')
     };
+  }
 };
