@@ -83,4 +83,5 @@ const compile = async () => {
       content: fs.readFileSync(file, 'utf8')
     };
   }
+
 };
