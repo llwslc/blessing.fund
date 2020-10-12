@@ -84,4 +84,5 @@ const compile = async () => {
     };
   }
 
+  for (const f of config.contract) {
 };
