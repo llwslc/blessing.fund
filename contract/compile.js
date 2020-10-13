@@ -85,4 +85,5 @@ const compile = async () => {
   }
 
   for (const f of config.contract) {
+    const filename = `${f}.sol`;
 };
