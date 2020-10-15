@@ -88,4 +88,5 @@ const compile = async () => {
     const filename = `${f}.sol`;
     const file = path.resolve(sourceDirPath, filename);
 
+    const solc = wrapper(require(solPath));
 };
