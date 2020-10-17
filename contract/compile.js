@@ -90,4 +90,5 @@ const compile = async () => {
 
     const solc = wrapper(require(solPath));
     const output = JSON.parse(solc.compile(JSON.stringify(input)));
+
 };
