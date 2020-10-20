@@ -92,4 +92,5 @@ const compile = async () => {
     const output = JSON.parse(solc.compile(JSON.stringify(input)));
 
     let errorFlag = false;
+    if (output.errors) {
 };
