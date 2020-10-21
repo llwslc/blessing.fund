@@ -94,4 +94,5 @@ const compile = async () => {
     let errorFlag = false;
     if (output.errors) {
       for (const error of output.errors) {
+        if (error.severity == 'error') {
 };
