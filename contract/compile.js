@@ -95,4 +95,5 @@ const compile = async () => {
     if (output.errors) {
       for (const error of output.errors) {
         if (error.severity == 'error') {
+          console.error('error file: ', file);
 };
