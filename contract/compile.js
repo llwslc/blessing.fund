@@ -97,4 +97,5 @@ const compile = async () => {
         if (error.severity == 'error') {
           console.error('error file: ', file);
           console.error('error: ', error.formattedMessage);
+          errorFlag = true;
 };
