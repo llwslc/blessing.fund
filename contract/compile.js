@@ -98,4 +98,5 @@ const compile = async () => {
           console.error('error file: ', file);
           console.error('error: ', error.formattedMessage);
           errorFlag = true;
+        }
 };
