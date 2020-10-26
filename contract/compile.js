@@ -99,4 +99,5 @@ const compile = async () => {
           console.error('error: ', error.formattedMessage);
           errorFlag = true;
         }
+      }
 };
