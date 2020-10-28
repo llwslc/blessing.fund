@@ -100,4 +100,5 @@ const compile = async () => {
           errorFlag = true;
         }
       }
+    }
 };
