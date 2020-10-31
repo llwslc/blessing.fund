@@ -102,5 +102,6 @@ const compile = async () => {
       }
     }
 
+    if (errorFlag) continue;
 };
 
