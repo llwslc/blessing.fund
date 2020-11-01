@@ -104,5 +104,6 @@ const compile = async () => {
 
     if (errorFlag) continue;
 
+    if (output.contracts) {
 };
 
