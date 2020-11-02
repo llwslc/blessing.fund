@@ -105,5 +105,6 @@ const compile = async () => {
     if (errorFlag) continue;
 
     if (output.contracts) {
+      const targetFilePath = path.resolve(bytecodeDirPath, `${f}.json`);
 };
 
