@@ -108,5 +108,6 @@ const compile = async () => {
       const targetFilePath = path.resolve(bytecodeDirPath, `${f}.json`);
       for (const contract in output.contracts[filename]) {
         console.log('success: ', file, contract);
+        const bytecode = output.contracts[filename][contract].evm.bytecode.object;
 };
 
