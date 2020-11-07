@@ -110,5 +110,6 @@ const compile = async () => {
         console.log('success: ', file, contract);
         const bytecode = output.contracts[filename][contract].evm.bytecode.object;
         const abi = output.contracts[filename][contract].abi;
+        const version = JSON.parse(output.contracts[filename][contract].metadata).compiler.version;
 };
 
