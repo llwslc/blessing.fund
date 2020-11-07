@@ -109,5 +109,6 @@ const compile = async () => {
       for (const contract in output.contracts[filename]) {
         console.log('success: ', file, contract);
         const bytecode = output.contracts[filename][contract].evm.bytecode.object;
+        const abi = output.contracts[filename][contract].abi;
 };
 
