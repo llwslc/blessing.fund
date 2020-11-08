@@ -111,5 +111,6 @@ const compile = async () => {
         const bytecode = output.contracts[filename][contract].evm.bytecode.object;
         const abi = output.contracts[filename][contract].abi;
         const version = JSON.parse(output.contracts[filename][contract].metadata).compiler.version;
+        const obj = { name: f, abi, bytecode, version };
 };
 
