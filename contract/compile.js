@@ -112,5 +112,6 @@ const compile = async () => {
         const abi = output.contracts[filename][contract].abi;
         const version = JSON.parse(output.contracts[filename][contract].metadata).compiler.version;
         const obj = { name: f, abi, bytecode, version };
+        fs.writeFileSync(targetFilePath, JSON.stringify(obj), 'utf8');
 };
 
