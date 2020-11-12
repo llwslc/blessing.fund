@@ -114,5 +114,6 @@ const compile = async () => {
         const obj = { name: f, abi, bytecode, version };
         fs.writeFileSync(targetFilePath, JSON.stringify(obj), 'utf8');
       }
+    }
 };
 
