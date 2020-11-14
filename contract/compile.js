@@ -118,3 +118,4 @@ const compile = async () => {
   }
 };
 
+compile();
