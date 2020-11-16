@@ -9,3 +9,4 @@ const deployedMoreInfoKey = '_more';
 let deployedMoreInfo = {};
 
 const notDeployed = async () => {
+  for (const c of contract) {
