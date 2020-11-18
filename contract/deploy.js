@@ -11,3 +11,4 @@ let deployedMoreInfo = {};
 const notDeployed = async () => {
   for (const c of contract) {
     if (deployedInfo[c]) continue;
+    const obj = readJson(`./bin/${c}.json`);
