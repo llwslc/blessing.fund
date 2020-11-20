@@ -13,3 +13,4 @@ const notDeployed = async () => {
     if (deployedInfo[c]) continue;
     const obj = readJson(`./bin/${c}.json`);
     const { address, txHash } = await deploy(obj.name, obj.bytecode);
+    deployedInfo[c] = address;
