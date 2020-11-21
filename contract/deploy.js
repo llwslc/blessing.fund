@@ -14,3 +14,4 @@ const notDeployed = async () => {
     const obj = readJson(`./bin/${c}.json`);
     const { address, txHash } = await deploy(obj.name, obj.bytecode);
     deployedInfo[c] = address;
+    deployedMoreInfo[`${c}_T`] = _TronWeb.address.fromHex(address);
