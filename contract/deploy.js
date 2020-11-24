@@ -16,3 +16,4 @@ const notDeployed = async () => {
     deployedInfo[c] = address;
     deployedMoreInfo[`${c}_T`] = _TronWeb.address.fromHex(address);
     deployedMoreInfo[`${c}_TxHash`] = txHash;
+  }
