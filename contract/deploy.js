@@ -18,3 +18,4 @@ const notDeployed = async () => {
     deployedMoreInfo[`${c}_TxHash`] = txHash;
   }
   if (!deployedInfo[deployedMoreInfoKey]) {
+    deployedInfo[deployedMoreInfoKey] = deployedMoreInfo;
