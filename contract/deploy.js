@@ -19,3 +19,4 @@ const notDeployed = async () => {
   }
   if (!deployedInfo[deployedMoreInfoKey]) {
     deployedInfo[deployedMoreInfoKey] = deployedMoreInfo;
+  } else {
